@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "f9b5b061-a8f2-4663-8a21-aa8a0cf31a1b",
+		"name": "TEST YOGTA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23896798",
+		"_collection_link": "https://interstellar-crescent-246765.postman.co/workspace/fancy~33208df9-80d2-4c9f-a9bf-17cfec8279cd/collection/23896798-f9b5b061-a8f2-4663-8a21-aa8a0cf31a1b?action=share&source=collection_link&creator=23896798"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ok\",\r\n    \"password\":\"ok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"budi@gmail.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "create product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"merchantId\": 1,\r\n  \"name\": \"Kaos Polos\",\r\n  \"description\": \"Kaos polos cotton combed 24s\",\r\n  \"basePrice\": 100000,\r\n  \"hasVariant\": true,\r\n  \"variants\": [\r\n    { \"color\": \"Putih\", \"size\": \"M\", \"sku\": \"PUTIH-M\", \"stock\": 10 },\r\n    { \"color\": \"Putih\", \"size\": \"L\", \"sku\": \"PUTIH-L\", \"stock\": 5 },\r\n    { \"color\": \"Hitam\", \"size\": \"M\", \"sku\": \"HITAM-M\", \"stock\": 8 },\r\n    { \"color\": \"Hitam\", \"size\": \"L\", \"sku\": \"HITAM-L\", \"stock\": 12 }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "get product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJidWRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTc5NDUzNiwiZXhwIjoxNzQ2Mzk5MzM2fQ.8fPVmylFr9LO1ZuVm7f0zw9zfn6o9dgoWdrvfPDRFg4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"merchantId\": 1,\r\n  \"name\": \"Kaos Polos\",\r\n  \"description\": \"Kaos polos cotton combed 24s\",\r\n  \"basePrice\": 100000,\r\n  \"hasVariant\": true,\r\n  \"variants\": [\r\n    { \"color\": \"Putih\", \"size\": \"M\", \"sku\": \"PUTIH-M\", \"stock\": 10 },\r\n    { \"color\": \"Putih\", \"size\": \"L\", \"sku\": \"PUTIH-L\", \"stock\": 5 },\r\n    { \"color\": \"Hitam\", \"size\": \"M\", \"sku\": \"HITAM-M\", \"stock\": 8 },\r\n    { \"color\": \"Hitam\", \"size\": \"L\", \"sku\": \"HITAM-L\", \"stock\": 12 }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/products?merchantId=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "merchantId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updated product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJidWRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTc5NDUzNiwiZXhwIjoxNzQ2Mzk5MzM2fQ.8fPVmylFr9LO1ZuVm7f0zw9zfn6o9dgoWdrvfPDRFg4"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kaos Polos\",\r\n    \"description\": \"Kaos polos cotton combed 24s terbaru\",\r\n    \"basePrice\": 110000,\r\n    \"hasVariant\": true,\r\n    \"merchantId\": 1,\r\n    \"variants\": [\r\n        {\r\n            \"id\": 1,\r\n            \"productId\": 1,\r\n            \"color\": \"Putih\",\r\n            \"size\": \"M\",\r\n            \"sku\": \"PUTIH-M\",\r\n            \"stock\": 12,\r\n            \"price\": 110000\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"productId\": 1,\r\n            \"color\": \"Putih\",\r\n            \"size\": \"L\",\r\n            \"sku\": \"PUTIH-L\",\r\n            \"stock\": 6,\r\n            \"price\": 110000\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"productId\": 1,\r\n            \"color\": \"Hitam\",\r\n            \"size\": \"M\",\r\n            \"sku\": \"HITAM-M\",\r\n            \"stock\": 10,\r\n            \"price\": 110000\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"productId\": 1,\r\n            \"color\": \"Hitam\",\r\n            \"size\": \"L\",\r\n            \"sku\": \"HITAM-L\",\r\n            \"stock\": 15,\r\n            \"price\": 110000\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/products/1"
+			},
+			"response": []
+		}
+	]
+}
